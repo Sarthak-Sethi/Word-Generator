@@ -11,12 +11,29 @@ export class AppComponent {
   limit:number = 10;
   words : string = '';
 
-  handlingSlideBar(newLimit : number) {
-this.limit = newLimit;
+  handlingSlideBar(newLimit : Event) {
+  this.limit = parseInt((<HTMLInputElement>newLimit.target).value);
   }
   generateWordsString() {
-    this.words = words.slice(0,this.limit).join(" ");
+    this.words =   this.shuffle(words).slice(0,this.limit).join(" ");
     console.log("generate words clicked");
     
+  }
+  shuffle(array:string []) {
+    var currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
   }
 }
