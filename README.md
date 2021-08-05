@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
-<img src="preview.jpg" alt="Project preview imagee">
+<img src="preview.PNG" alt="Project preview imagee" width="400">
 
 ## Development server
 
